@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import json
 
+
 class ContractManager:
     def __init__(self, abi_path: str):
         with open(abi_path) as json_file:
