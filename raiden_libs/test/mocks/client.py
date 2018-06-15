@@ -207,9 +207,9 @@ class MockRaidenNode:
     def settle_channel(
         self,
         partner_address: Address,
-        transferred=tuple(),
-        locked=tuple(),
-        locksroot=tuple()
+        transferred=tuple(),  # noqa: B008
+        locked=tuple(),  # noqa: B008
+        locksroot=tuple()  # noqa: B008
     ):
         """Settles a closed channel. Settling requires that the challenge period is over"""
         assert len(transferred) == 2

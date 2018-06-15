@@ -17,7 +17,7 @@ def normalize_name(name):
     return name
 
 
-def make_filter(web3, event_abi, filters={}, **filter_kwargs):
+def make_filter(web3, event_abi, filters=None, **filter_kwargs):
     assert event_abi != []
     log_data_extract_fn = functools.partial(get_event_data, event_abi)
     data_filter_set, filter_params = construct_event_filter_params(

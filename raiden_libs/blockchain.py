@@ -20,7 +20,7 @@ def create_event_filter(
         web3: Web3,
         event_name: str,
         event_abi: Dict,
-        filter_params: Dict = {}
+        filter_params: Dict = None
 ) -> LogFilter:
     """Create filter object that tracks events emitted.
 
@@ -32,6 +32,8 @@ def create_event_filter(
 
     Returns:
         A LogFilter instance"""
+    if filter_params is None:
+        filter_params = {}
     filter_meta_params = dict(filter_params)
 
     data_filter_set, event_filter_params = construct_event_filter_params(
