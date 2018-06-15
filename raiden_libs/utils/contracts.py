@@ -4,7 +4,7 @@ from web3.utils.events import get_event_data
 from web3.utils.filters import construct_event_filter_params
 from eth_utils import (
     decode_hex,
-    function_abi_to_4byte_selector
+    function_abi_to_4byte_selector,
 )
 from eth_abi import decode_abi
 
@@ -23,7 +23,7 @@ def make_filter(web3, event_abi, filters=None, **filter_kwargs):
     data_filter_set, filter_params = construct_event_filter_params(
         event_abi,
         argument_filters=filters,
-        **filter_kwargs
+        **filter_kwargs,
     )
 
     event_filter = web3.eth.filter(filter_params)
